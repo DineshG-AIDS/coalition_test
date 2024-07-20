@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coalition FrontEnd Developer</title>
+    <link rel="stylesheet" href="./dist/styles.css" />
+    <link rel="Icon" href="./asserts/favicon.png" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <nav class="bg-[#FFFFFF] border rounded-xl p-2 m-2">
+      <div class="mx-auto max-w-1xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <!-- Mobile menu button-->
+            <button
+              type="button"
+              class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+              id="mobile-menu-button"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="block h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+              <svg
+                class="hidden h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="flex sm:flex justify-center sm:items-stretch sm:justify-between"
+          >
+            <div class="flex flex-shrink-0 items-center">
+              <a href="/">
+                <img
+                  class="h-8 w-auto sm:ml-0 ml-20"
+                  src="./asserts/TestLogo@2x.png"
+                  alt="Your Company"
+              /></a>
+            </div>
+            <div class="hidden sm:ml-6 sm:block">
+              <div class="flex space-x-4 pl-[15rem]">
+                <div
+                  class="flex flex-row items-center text-black hover:bg-[#01F0D0] rounded-full px-4 py-1 text-sm font-medium gap-x-2 cursor-pointer"
+                >
+                  <img
+                    src="./asserts/home_FILL0_wght300_GRAD0_opsz24.svg"
+                    alt=""
+                  />
+                  <a href="#">Overview</a>
+                </div>
+                <div
+                  class="flex flex-row items-center cursor-pointer bg-[#01F0D0] text-black hover:bg-[#01F0D0] rounded-full px-4 py-1text-sm font-medium gap-x-2"
+                >
+                  <img
+                    src="./asserts/group_FILL0_wght300_GRAD0_opsz24.svg"
+                    alt=""
+                  />
+                  <a
+                    href="#"
+                    class="rounded-full px-1 py-2 text-xs font-medium text-black"
+                    >Patients</a
+                  >
+                </div>
+                <div
+                  class="flex flex-row items-center cursor-pointer text-black hover:bg-[#01F0D0] rounded-3xl px-4 py-2 text-xs font-medium gap-x-2"
+                >
+                  <img
+                    src="./asserts/calendar_today_FILL0_wght300_GRAD0_opsz24.svg"
+                    alt=""
+                  />
+                  <a href="#">Schedule</a>
+                </div>
+                <div
+                  class="flex flex-row items-center cursor-pointer text-black hover:bg-[#01F0D0] rounded-full px-4 py-1 font-medium gap-x-2 text-xs"
+                >
+                  <img
+                    src="./asserts/chat_bubble_FILL0_wght300_GRAD0_opsz24.svg"
+                    alt=""
+                  />
+                  <a href="#">Message</a>
+                </div>
+                <div
+                  class="flex flex-row items-center cursor-pointer text-black hover:bg-[#01F0D0] rounded-3xl px-3 py-2 text-xs font-medium gap-x-2"
+                >
+                  <img
+                    src="./asserts/credit_card_FILL0_wght300_GRAD0_opsz24.svg"
+                    alt=""
+                  />
+                  <a href="#" class="">Transactions</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="absolute inset-y-0 right- flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+          >
+            <div class="relative mr-5 hidden sm:flex">
+              <div class="flex flex-row items-center gap-x-3">
+                <button
+                  type="button"
+                  class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  id="user-menu-button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  <img
+                    class="h-11 w-11 rounded-full"
+                    src="./asserts/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc@2x.png"
+                    alt=""
+                  />
+                </button>
+                <div class="text-xs text-[#072635]">
+                  <h1 class="font-semibold">Dr. Jose Simmons</h1>
+                  <h1 class="font-medium">General Practitioner</h1>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="hidden sm:block">
+              <img src="./asserts/settings_FILL0_wght300_GRAD0_opsz24.svg" />
+            </button>
+            <button type="button" class="ml-3 hidden sm:block">
+              <img src="./asserts/more_vert_FILL0_wght300_GRAD0_opsz24.svg" />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="sm:hidden hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2">
+          <div
+            class="flex flex-row items-center text-black hover:bg-[#01F0D0] rounded-full px-4 py-1 text-sm font-medium gap-x-2 cursor-pointer"
+          >
+            <img src="./asserts/home_FILL0_wght300_GRAD0_opsz24.svg" alt="" />
+            <a href="#">Overview</a>
+          </div>
+          <div
+            class="flex flex-row items-center bg-[#01F0D0] text-black hover:bg-[#01F0D0] rounded-full px-4 py-1text-sm font-medium gap-x-2"
+          >
+            <img src="./asserts/group_FILL0_wght300_GRAD0_opsz24.svg" alt="" />
+            <a href="#" class="rounded-full px-4 py-2 font-medium text-black"
+              >Patients</a
+            >
+          </div>
+          <div
+            class="flex flex-row items-center text-black hover:bg-[#01F0D0] rounded-3xl px-4 py-2 text-sm font-medium gap-x-2"
+          >
+            <img
+              src="./asserts/calendar_today_FILL0_wght300_GRAD0_opsz24.svg"
+              alt=""
+            />
+            <a href="#">Schedule</a>
+          </div>
+          <div
+            class="flex flex-row items-center text-black hover:bg-[#01F0D0] rounded-full px-4 py-1 font-medium gap-x-2"
+          >
+            <img
+              src="./asserts/chat_bubble_FILL0_wght300_GRAD0_opsz24.svg"
+              alt=""
+            />
+            <a href="#">Message</a>
+          </div>
+          <div
+            class="flex flex-row items-center text-black hover:bg-[#01F0D0] rounded-3xl px-3 py-2 text-sm font-medium gap-x-2"
+          >
+            <img
+              src="./asserts/credit_card_FILL0_wght300_GRAD0_opsz24.svg"
+              alt=""
+            />
+            <a href="#" class="">Transactions</a>
+          </div>
+          <div class="flex flex-row items-center gap-x-3 mt-4">
+            <button
+              type="button"
+              class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              id="user-menu-button-mobile"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              <img
+                class="h-11 w-11 rounded-full"
+                src="./asserts/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc@2x.png"
+                alt=""
+              />
+            </button>
+            <div class="text-xs text-[#072635]">
+              <h1 class="font-semibold text-xs">Dr. Jose Simmons</h1>
+              <h1 class="font-medium">General Practitioner</h1>
+            </div>
+            <button type="button" class="">
+              <img src="./asserts/settings_FILL0_wght300_GRAD0_opsz24.svg" />
+            </button>
+            <button type="button" class="">
+              <img src="./asserts/more_vert_FILL0_wght300_GRAD0_opsz24.svg" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--  -->
+    <!-- Side Bar For Patients List -->
+    <div class="xl:flex xl:justify-around xl:items-center">
+      <div
+        class="w-[367px] h-[1054px] ml-4 overflow-y-scroll bg-white border mt-4 p-2 rounded-lg"
+      >
+        <div
+          class="flex flex-row justify-between items-center gap-x-2 mb-4 p-2 pl-3"
+        >
+          <h1 class="text-[#072635] text-lg font-semibold">Patients</h1>
+          <img src="./asserts/search_FILL0_wght300_GRAD0_opsz24.svg" alt="" />
+        </div>
+        <div id="data-container" class="flex flex-col"></div>
+      </div>
+
+      <!--  -->
+      <!-- Div For Displying the particalar user for now as per the instruciton I am showing the Jessica Taylor detials and if you want to know other details clik their name  -->
+      <div>
+        <div>
+          <h1
+            class="text-[#072635] text-2xl font-semibold pt-8 pl-4 font-testing"
+          >
+            Diagnosis History
+          </h1>
+        </div>
+        <div class="">
+          <div class="bg-[#F4F0FE] w-full flex-col rounded-xl mt-4">
+            <div class="flex">
+              <div>
+                <canvas id="myChart" class="w-[35vw] p-2"></canvas>
+              </div>
+              <div class="flex flex-col gap-y-8 pr-8 pl-3 pt-4">
+                <div class="flex flex-col items-start gap-y-6">
+                  <div class="flex flex-row items-center gap-x-2">
+                    <div class="bg-[#E66FD2] w-3.5 h-3.5 rounded-full"></div>
+                    <div>
+                      <h1 class="text-[#072635] font-semibold text-xs">
+                        Systolic
+                      </h1>
+                    </div>
+                  </div>
+                  <div>
+                    <h1
+                      class="text-[#072635] font-semibold text-xl"
+                      id="SystolicValue"
+                    >
+                      160
+                    </h1>
+                    <h1
+                      class="text-[#072635] text-xs font-normal flex flex-row items-center gap-x-2 pt-2"
+                    >
+                      <img src="./asserts/ArrowUp.svg" alt="" />
+                      Higher than Average
+                    </h1>
+                  </div>
+                </div>
+                <div class="flex flex-col items-start gap-y-3">
+                  <div class="flex flex-row items-center gap-x-2">
+                    <div class="bg-[#8C6FE6] w-3.5 h-3.5 rounded-full"></div>
+                    <div>
+                      <h1 class="text-[#072635] font-semibold text-xs">
+                        Diastolic
+                      </h1>
+                    </div>
+                  </div>
+                  <div>
+                    <h1
+                      class="text-[#072635] font-semibold text-xl"
+                      id="DiastolicValue"
+                    >
+                      78
+                    </h1>
+                    <h1
+                      class="text-[#072635] text-xs font-normal flex flex-row items-center gap-x-2 pt-2"
+                    >
+                      <img
+                        src="./asserts/ArrowUp.svg"
+                        alt=""
+                        class="transform rotate-180"
+                      />
+                      Higher than Average
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-row items-center justify-around">
+              <div>
+                <div class="bg-[#E0F3FA] w-[228px] rounded-xl m-4">
+                  <div class="pb-6">
+                    <div class="pl-8 pt-2">
+                      <img src="./asserts/respiratory rate.svg" alt="" />
+                    </div>
+                    <div class="text-[#072635] pl-8 pt-2">
+                      <h1 class="text-[16px] font-medium font-testing">
+                        Respiratory Rate
+                      </h1>
+                      <h1
+                        class="text-[30px] font-semibold font-testing"
+                        id="respiratory_rate"
+                      >
+                        20 bpm
+                      </h1>
+                      <h1
+                        class="text-[14px] font-medium"
+                        id="respiratory_level"
+                      >
+                        Normal
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="bg-[#FFE6E9] w-[228px] rounded-xl m-4">
+                  <div class="pb-6">
+                    <div class="pl-8 pt-2">
+                      <img src="./asserts/temperature.svg" alt="" />
+                    </div>
+                    <div class="text-[#072635] pl-8 pt-2">
+                      <h1 class="text-[16px] font-medium font-testing">
+                        Temperature
+                      </h1>
+                      <h1
+                        class="text-[30px] font-semibold font-testing"
+                        id="TemperatureValue"
+                      >
+                        98.6°F
+                      </h1>
+                      <h1 class="text-[14px] font-medium" id="TemperatureLevel">
+                        Normal
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="bg-[#FFE6F1] w-[228px] rounded-xl m-4">
+                  <div class="pb-6">
+                    <div class="pt-2 pl-8">
+                      <img src="./asserts/HeartBPM.svg" alt="" />
+                    </div>
+                    <div class="text-[#072635] pl-8 pt-2">
+                      <h1 class="text-[16px] font-medium font-testing">
+                        Heart Rate
+                      </h1>
+                      <h1
+                        class="text-[30px] font-semibold font-testing"
+                        id="HeartValue"
+                      >
+                        78 bpm
+                      </h1>
+                      <h1 class="text-[14px] font-medium flex flex-row gap-x-2">
+                        <img src="./asserts/ArrowUp.svg" alt="" />
+                        <span id="HeartLevel"> Lower than Average</span>
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#FFFFFF] pl-10 pt-8 w-full flex-col rounded-xl mt-4 border"
+          >
+            <h1 class="text-[#072635] text-2xl font-semibold pl-4 font-testing">
+              Diagnostic List
+            </h1>
+            <div class="h-[326px] overflow-y-scroll mt-4 cursor-default">
+              <table class="rounded-full w-full">
+                <thead
+                  class="text-xs bg-[#F6F7F8] border rounded-full"
+                  id="TableRow"
+                >
+                  <tr>
+                    <th scope="col" class="">Problem/Diagnosis</th>
+                    <th scope="col" class="">Description</th>
+                    <th scope="col" class="px-6 py-3">Status</th>
+                  </tr>
+                </thead>
+                <tbody id="diagnostic-table-body" class="rounded-full">
+                  <!-- Rows will be dynamically generated here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <!-- Div For Displaying User Details -->
+      <div>
+        <div
+          class="bg-[#FFFFFF] w-[367px] h-[740px] m-4 border rounded-xl cursor-default"
+        >
+          <div class="flex justify-center pt-10">
+            <img
+              src="./asserts/Layer 2.png"
+              alt=""
+              class="w-44"
+              id="ImageUserDetails"
+            />
+          </div>
+          <div>
+            <h1
+              class="text-[#072635] text-xl font-semibold text-center font-testing pt-4"
+            >
+              Jessica Taylor
+            </h1>
+          </div>
+          <div class="pl-6 pt-6 flex flex-col gap-y-6">
+            <div class="flex flex-row items-center gap-x-3">
+              <div>
+                <img src="./asserts/BirthIcon.svg" alt="" />
+              </div>
+              <div>
+                <h1 class="text-[#072635] text-[14px] font-medium">
+                  Date Of Birth
+                </h1>
+                <h1
+                  class="text-[#072635] text-[14px] font-medium"
+                  id="DateForUserTab"
+                >
+                  August 23, 1996
+                </h1>
+              </div>
+            </div>
+            <div class="flex flex-row items-center gap-x-3">
+              <div>
+                <img src="./asserts/FemaleIcon(1).svg" alt="" />
+              </div>
+              <div>
+                <h1 class="text-[#072635] text-[14px] font-medium">Gender</h1>
+                <h1
+                  class="text-[#072635] text-[14px] font-medium"
+                  id="GenderForUserTab"
+                >
+                  Female
+                </h1>
+              </div>
+            </div>
+            <div class="flex flex-row items-center gap-x-3">
+              <div>
+                <img src="./asserts/PhoneIcon1.svg" alt="" />
+              </div>
+              <div>
+                <h1 class="text-[#072635] text-[14px] font-medium">
+                  Contact Info.
+                </h1>
+                <h1
+                  class="text-[#072635] text-[14px] font-medium"
+                  id="PhoneForUserTab"
+                >
+                  (415) 555-1234
+                </h1>
+              </div>
+            </div>
+            <div class="flex flex-row items-center gap-x-3">
+              <div>
+                <img src="./asserts/PhoneIcon1.svg" alt="" />
+              </div>
+              <div>
+                <h1 class="text-[#072635] text-[14px] font-medium">
+                  Emergency Contacts
+                </h1>
+                <h1
+                  class="text-[#072635] text-[14px] font-medium"
+                  id="EmergencyPhoneForUserTab"
+                >
+                  (415) 555-5678
+                </h1>
+              </div>
+            </div>
+            <div class="flex flex-row items-center gap-x-3">
+              <div>
+                <img src="./asserts/InsuranceIcon.svg" alt="" />
+              </div>
+              <div>
+                <h1 class="text-[#072635] text-[14px] font-medium">
+                  Insurance Provider
+                </h1>
+                <h1
+                  class="text-[#072635] text-[14px] font-medium"
+                  id="InsuranceForUserTab"
+                >
+                  Sunrise Health Assurance
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center mt-10">
+            <div class="bg-[#01F0D0] rounded-full w-1/2 cursor-pointer">
+              <h1
+                class="text-[#072635] text-[14px] p-2 text-center font-semibold"
+              >
+                Show All Information
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-[#FFFFFF] w-[367px] h-[296px] m-4 border rounded-xl cursor-default overflow-y-scroll"
+        >
+          <h1
+            class="text-[#072635] text-xl font-semibold pt-2 pl-4 font-testing"
+          >
+            Lab Results
+          </h1>
+          <div
+            class="flex flex-row items-center justify-between p-5"
+            id="OverAllDiv"
+          >
+            <h1
+              class="text-[#072635] text-[13px]"
+              id="lab-results-container"
+            ></h1>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>
